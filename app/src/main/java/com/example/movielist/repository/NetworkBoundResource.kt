@@ -79,7 +79,6 @@ abstract class NetworkBoundResource<ResponseObject, CacheObject>
             withContext(Main){
                 // make network call
 
-                delay(5000)
                 val apiResponse = createCall()
 
                 result.addSource(apiResponse) { response->
