@@ -1,33 +1,66 @@
 package com.example.movielist.api
 
+import androidx.room.ColumnInfo
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class MovieResponse(
 
-    @SerializedName("adult")
+    @SerializedName("id")
     @Expose
-    var adult: String,
+    var id: Int,
 
     @SerializedName("original_title")
     @Expose
-    var original_title: String,
+    var original_title:String,
 
     @SerializedName("overview")
     @Expose
-    var overview: String,
+    var overview:String,
+
+    @SerializedName("description")
+    @Expose
+    var description: String,
+
+    @SerializedName("name")
+    @Expose
+    var name: String,
+
+    @SerializedName("poster_path")
+    @Expose
+    var poster_path: String,
+
+    @SerializedName("director")
+    @Expose
+    var director: String,
+
+    @SerializedName("runtime")
+    @Expose
+    var runtime: Long,
+
+    @SerializedName("vote_average")
+    @Expose
+    var vote_average:Double,
 
     @SerializedName("release_date")
     @Expose
-    var release_date: String,
+    var release_date:String,
 
-    @SerializedName("revenue")
+    @SerializedName("vote_count")
     @Expose
-    var revenue: String
+    var vote_count:String,
 
+    @SerializedName("tagline")
+    @Expose
+    var tagline:String,
+
+    @SerializedName("backdrop_path")
+    @Expose
+    var backdrop_path:String
 
 ){
+
     override fun toString(): String {
-        return "MovieResponse(adult='$adult', original_title='$original_title', overview='$overview', release_date='$release_date', revenue='$revenue')"
+        return "MovieResponse(id=$id, original_title='$original_title', overview='$overview', description='$description', name='$name', poster_path='$poster_path', director='$director', runtime=$runtime, vote_average=$vote_average, release_date='$release_date', vote_count='$vote_count', tagline='$tagline', backdrop_path='$backdrop_path')"
     }
 }

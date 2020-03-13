@@ -7,4 +7,6 @@ class GenericResponse(
     @SerializedName("response")
     @Expose
     var response: String
+
+
 )

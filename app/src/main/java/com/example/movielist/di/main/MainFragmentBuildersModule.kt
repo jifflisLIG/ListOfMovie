@@ -12,4 +12,6 @@ abstract class MainFragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract fun contributeMovieDetailFragment():MovieDetailFragment
+
+
 }

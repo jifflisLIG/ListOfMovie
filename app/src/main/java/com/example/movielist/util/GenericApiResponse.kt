@@ -22,11 +22,11 @@ sealed class GenericApiResponse<T> {
 
         fun <T> create(response: Response<T>): GenericApiResponse<T> {
 
+
             Log.d(TAG, "GenericApiResponse: response: ${response}")
             Log.d(TAG, "GenericApiResponse: raw: ${response.raw()}")
             Log.d(TAG, "GenericApiResponse: headers: ${response.headers()}")
-
-
+            println(response.body())
 
             if(response.isSuccessful){
                 val body = response.body()

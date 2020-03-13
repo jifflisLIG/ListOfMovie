@@ -1,6 +1,8 @@
 package com.codingwithmitch.openapi.di.main
 
 import com.example.movielist.api.OpenApiMainService
+import com.example.movielist.persistence.AppDatabase
+import com.example.movielist.persistence.MovieDao
 import com.example.movielist.repository.MovieRepository
 import dagger.Module
 import dagger.Provides
@@ -12,33 +14,28 @@ class MainModule {
     @MainScope
     @Provides
     fun provideTest(retrofitBuilder: Retrofit.Builder):OpenApiMainService{
-        return retrofitBuilder.build().create(OpenApiMainService::class.java)
+        return retrofitBuilder
+            .build()
+            .create(OpenApiMainService::class.java)
     }
 
-
-
-//    @MainScope
-//    @Provides
-//    fun provideOpenApiMainService(retrofitBuilder: Retrofit.Builder): OpenApiMainService {
-//        return retrofitBuilder
-//            .build()
-//            .create(OpenApiMainService::class.java)
-//    }
 //
     @MainScope
     @Provides
     fun providemovieRepository(
-        openApiMainService: OpenApiMainService
+        openApiMainService: OpenApiMainService,
+        movieDao:MovieDao
     ): MovieRepository {
-        return MovieRepository(openApiMainService)
+        return MovieRepository(openApiMainService,movieDao)
     }
 
-//
-//    @MainScope
-//    @Provides
-//    fun provideBlogPostDao(db: AppDatabase): BlogPostDao {
-//        return db.getBlogPostDao()
-//    }
+
+    @MainScope
+    @Provides
+    fun provideMovieDao(db: AppDatabase): MovieDao {
+        return db.getMovieDao()
+    }
+
 //
 //    @MainScope
 //    @Provides

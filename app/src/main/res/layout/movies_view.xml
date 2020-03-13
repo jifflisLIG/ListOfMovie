@@ -15,7 +15,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:background="@color/white">
@@ -27,7 +27,7 @@
                 android:layout_marginStart="180dp"
                 android:layout_marginLeft="16dp"
                 android:text="TextView"
-                android:layout_above="@id/director"
+                android:layout_above="@id/release_date"
                 android:textSize="18sp"
                 android:typeface="sans"
                 android:textStyle="bold"
@@ -35,15 +35,15 @@
 
             <TextView
                 android:layout_marginTop="8dp"
-                android:id="@+id/director"
+                android:id="@+id/release_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
                 android:layout_marginLeft="16dp"
                 android:text="TextView"
-                android:layout_above="@id/time"/>
+                android:layout_above="@id/vote_count"/>
             <TextView
-                android:id="@+id/time"
+                android:id="@+id/vote_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
@@ -70,6 +70,8 @@
 
 
             <RatingBar
+
+                android:id="@+id/rating"
                 style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
