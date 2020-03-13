@@ -141,7 +141,7 @@ class MoviesAdapter(
     }
 
     fun removeLoading(){
-        if(movieList!!.size>0){
+        if(movieList!!.size>0 && movieList!!.get(movieList!!.size-1).original_title.equals("LOADING...")){
             movieList!!.removeAt(movieList!!.size - 1)
             notifyDataSetChanged()
         }

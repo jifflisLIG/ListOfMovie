@@ -131,18 +131,15 @@ class MoviesFragment : DaggerFragment(),SwipeRefreshLayout.OnRefreshListener {
                 val lastPosition = layoutManager.findLastVisibleItemPosition()
                 if (lastPosition == recyclerAdapter.itemCount.minus(1)) {
 
-                    viewModel.nextPage()
-
-                    if(viewModel.isQueryExhausted){
-                        Toast.makeText(context,"No more data!",Toast.LENGTH_LONG).show();
+                    if(viewModel.nextPage()){
                         recyclerAdapter.removeLoading()
-                    }
-
-                    if(viewModel.isQueryOnProgress && !viewModel.isQueryExhausted){
                         recyclerAdapter.displayLoading()
                     }
 
-
+                    if(viewModel.isQueryExhausted){
+                        Toast.makeText(context,"No more data!",Toast.LENGTH_LONG).show();
+                       recyclerAdapter.removeLoading()
+                    }
 
                 }
 
@@ -201,9 +198,7 @@ class MoviesFragment : DaggerFragment(),SwipeRefreshLayout.OnRefreshListener {
                     if(resource.message.equals(ErrorHandling.ERROR_QUERY_EXHAUSTED)){
                         Toast.makeText(context,"No more data!",Toast.LENGTH_LONG).show();
                     }else{
-                        if(!resource.message.equals("Job was cancelled")){
-                            Toast.makeText(context, resource.message,Toast.LENGTH_LONG).show();
-                        }
+                        Toast.makeText(context, resource.message,Toast.LENGTH_LONG).show();
 
                     }
                 }

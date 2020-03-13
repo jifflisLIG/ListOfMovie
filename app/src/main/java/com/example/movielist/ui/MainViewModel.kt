@@ -144,7 +144,7 @@ constructor(
                         searchMovies.value = Resource.Error(ErrorHandling.ERROR_QUERY_EXHAUSTED)
                         isQueryOnProgress = false;
                     }else if(movieSize == moviesResult.data!!.size && moviesResult.message=="cache"){
-                        isQueryOnProgress = true;
+                        isQueryOnProgress = false;
                     }else{
                         searchMovies.value = Resource.Success(data=moviesResult.data as ArrayList<Movie>)
                         movieSize = moviesResult.data.size;
