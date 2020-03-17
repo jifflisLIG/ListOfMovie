@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.movielist",
+    "sha256_cert_fingerprints":
+    ["6C:A3:D6:E1:0A:84:AB:28:3E:67:30:96:E9:78:44:9A:E4:C3:DA:2D:57:09:92:F2:18:7D:87:B9:BA:6B:5C:7D"]
+  }
+}]
